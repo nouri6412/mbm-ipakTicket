@@ -1,32 +1,24 @@
 <?php
-$this->models["insert_ticket"] = [];
-$this->models["insert_ticket"]["id"] = "101";
-$this->models["insert_ticket"]["name"] = "insert_ticket";
-$this->models["insert_ticket"]["label"] = "تیکت";
-$this->models["insert_ticket"]["primary_key"] = "id";
-$this->models["insert_ticket"]["fields"] = array(
+$this->models["insert_user_in_unit"] = [];
+$this->models["insert_user_in_unit"]["id"] = "102";
+$this->models["insert_user_in_unit"]["name"] = "insert_user_in_unit";
+$this->models["insert_user_in_unit"]["label"] = "ارتباط کاربران با بخش";
+$this->models["insert_user_in_unit"]["primary_key"] = "id";
+$this->models["insert_user_in_unit"]["fields"] = array(
     "id" => array(
         "title" => "id",
-        "label" => "شماره سیستمی تیکت",
+        "label" => "شماره سیستمی ",
         "sortable" => true,
         "in_table"=>true,
         "in_form" => true,
         "is_primary" => true
     ),
-    "title" => array(
-        "title" => "title",
-        "label" => "عنوان تیکت",
-        "sortable" => true,
-        "in_form" => true,
-        "is_title" => true,
-        "is_require"=>true,
-        "in_table"=>true,
-        "type" => array("type" => "text", "size" => 50,"class"=>"col-md-6")
-    ),
     "unit_id" => array(
         "title" => "unit_id",
         "label" => "بخش",
         "sortable" => true,
+        "is_require" => true,
+        "is_title" => true,
         "in_form" => true,
         "in_table" => true,
         "type" => array("type" => "select", "select" => ["model"=> $wpdb->prefix . "hesab_model","where" => "type_id=100", "key" => "id", "label" => "title"], "size" => 50, "class" => "col-md-6")
@@ -39,13 +31,5 @@ $this->models["insert_ticket"]["fields"] = array(
         "in_form" => true,
         "in_table" => true,
         "type" => array("type" => "select","auto-select"=>true, "select" => ["model"=> $wpdb->prefix . "users","where" => " ", "key" => "ID", "label" => "display_name"], "size" => 50, "class" => "col-md-6")
-    ),
-    "description" => array(
-        "title" => "description",
-        "label" => "توضیحات",
-        "sortable" => true,
-        "in_form" => true,
-        "in_table"=>true,
-        "type" => array("type" => "textarea","height"=>250, "size" => 1000,"class"=>"col-md-12")
     )
 );
