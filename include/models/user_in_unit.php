@@ -13,12 +13,21 @@ $this->models["insert_user_in_unit"]["fields"] = array(
         "in_form" => true,
         "is_primary" => true
     ),
+    "title" => array(
+        "title" => "title",
+        "label" => "عنوان ارتباط",
+        "sortable" => true,
+        "in_form" => true,
+        "is_title" => true,
+        "is_require"=>true,
+        "in_table"=>true,
+        "type" => array("type" => "text", "size" => 50,"class"=>"col-md-6")
+    ),
     "unit_id" => array(
         "title" => "unit_id",
         "label" => "بخش",
         "sortable" => true,
         "is_require" => true,
-        "is_title" => true,
         "in_form" => true,
         "in_table" => true,
         "type" => array("type" => "select", "select" => ["model"=> $wpdb->prefix . "hesab_model","where" => "type_id=100", "key" => "id", "label" => "title"], "size" => 50, "class" => "col-md-6")
