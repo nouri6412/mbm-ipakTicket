@@ -61,13 +61,13 @@ if (class_exists('MBM_Ipak_Core')) {
             global $wpdb;
             $table      = $wpdb->prefix . "hesab_model";
             $table_meta = $wpdb->prefix . "hesab_model_meta";
-            $sql = "";
+            $sql = "select ";
 
             $query_string       = $wpdb->prepare($sql, array());
             $items       = $wpdb->get_results($query_string, ARRAY_A);
 
-            add_submenu_page('ipak-ticket-dashboard', 'تیکت های من', 'تیکت های من' . '<span class="update-plugins count-1"><span class="plugin-count">1</span></span>', 'manage_options', 'ipak-ticket-insert_user_in_unit', array($this, "insert_user_in_unit"));
-            add_submenu_page('ipak-ticket-dashboard', 'تیکت های بخش من', 'تیکت های بخش من', 'manage_options', 'ipak-ticket-insert_user_in_unit', array($this, "insert_user_in_unit"));
+            add_submenu_page('ipak-ticket-dashboard', 'تیکت های من', 'تیکت های من' . '<span class="update-plugins count-1"><span class="plugin-count">1</span></span>', 'manage_options', 'ipak-ticket-report_my_ticket', array($this, "report_my_ticket"));
+            add_submenu_page('ipak-ticket-dashboard', 'تیکت های بخش ', 'تیکت های بخش ', 'manage_options', 'ipak-ticket-report_unit_ticket', array($this, "report_unit_ticket"));
         }
     }
 }

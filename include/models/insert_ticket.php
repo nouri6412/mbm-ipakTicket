@@ -40,6 +40,13 @@ $this->models["insert_ticket"]["fields"] = array(
         "in_table" => true,
         "type" => array("type" => "select","auto-select"=>true, "select" => ["model"=> $wpdb->prefix . "users","where" => " ", "key" => "ID", "label" => "display_name"], "size" => 50, "class" => "col-md-6")
     ),
+    "sender_id" => array(
+        "title" => "sender_id",
+        "label" => "ارسال کننده",
+        "sortable" => true,
+        "in_table" => true,
+        "type" => array("type" => "select","auto-select"=>true, "select" => ["model"=> $wpdb->prefix . "users","where" => " ", "key" => "ID", "label" => "display_name"], "size" => 50, "class" => "col-md-6")
+    ),
     "description" => array(
         "title" => "description",
         "label" => "توضیحات",

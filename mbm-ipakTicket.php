@@ -37,6 +37,11 @@ define('MBM_IPAK_TICKET_View', MBM_IPAK_TICKET_BASE . 'view/');
 require MBM_IPAK_TICKET_Include . 'ticket.php';
 require MBM_IPAK_TICKET_Include . 'home.php';
 
+foreach (glob(MBM_IPAK_TICKET_Include."hooks/*.php") as $filename)
+{
+    include $filename;
+}
+
 function MBM_Ipak_Ticket_Init()
 {
     if (class_exists('MBM_Ipak_Core')) {
