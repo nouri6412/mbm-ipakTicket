@@ -61,7 +61,7 @@ if (class_exists('MBM_Ipak_Core')) {
             global $wpdb;
             $table      = $wpdb->prefix . "hesab_model";
             $table_meta = $wpdb->prefix . "hesab_model_meta";
-            $sql = "select ";
+            $sql = "select count(1) from ";
 
             $query_string       = $wpdb->prepare($sql, array());
             $items       = $wpdb->get_results($query_string, ARRAY_A);

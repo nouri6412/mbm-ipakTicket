@@ -4,6 +4,11 @@ $this->models["insert_ticket"]["id"] = "101";
 $this->models["insert_ticket"]["name"] = "insert_ticket";
 $this->models["insert_ticket"]["label"] = "تیکت";
 $this->models["insert_ticket"]["primary_key"] = "id";
+$this->models["insert_ticket"]["where"] = " and (tb_meta.key_meta='sender_id' and (tb_meta.value_meta='".get_current_user_id()."')) ";
+if(is_admin())
+{
+    $this->models["insert_ticket"]["where"] = "";
+}
 $this->models["insert_ticket"]["fields"] = array(
     "id" => array(
         "title" => "id",
